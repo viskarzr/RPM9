@@ -16,6 +16,9 @@ namespace RPM9
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Коллекцмя
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
