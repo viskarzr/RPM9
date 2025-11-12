@@ -17,26 +17,28 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
-            <Button x:Name="btnAbout" Content="О программе" Margin="0,0,10,0"/>
-            <Button x:Name="btnExit" Content="Выход" Margin="10,0,0,0"/>
+            <Button x:Name="btnAbout" Content="О программе" Margin="0,0,10,0" Click="btnAbout_Click"/>
+            <Button x:Name="btnExit" Content="Выход" Margin="10,0,0,0" Click="btnExit_Click"/>
         </StackPanel>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2"/>
-        <GroupBox Header="Работа с массивом" Grid.Row="1">
+        <GroupBox Header="Работа с массивом" Grid.Column="1">
             <StackPanel>
                 <Label Content="Количество значений в массиве" Margin="0,0,0,10"/>
-                <TextBox TextWrapping="Wrap" Width="200" Margin="0,0,0,5"/>
-                <Button Content="Button" Width="200" Margin="0,0,0,5"/>
-                <Button Content="Button" Width="200" Margin="0,0,0,5"/>
-                <Button Content="Button" Width="200" Margin="0,0,0,5"/>
+                <TextBox x:Name="tbCol" TextWrapping="Wrap" Width="200" Margin="0,0,0,5"/>
+                <Button x:Name="btnFull" Content="Заполнить" Width="200" Margin="0,0,0,5" Click="btnFull_Click"/>
+                <Button x:Name="btnClear" Content="Очистить" Width="200" Margin="0,0,0,5" Click="btnClear_Click"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Grid.Column="1" Header="Расчет по заданию" Grid.Row="1">
             <StackPanel>
-                <Label Content="Расчитать количетсво отцательных чисел" Margin="0,0,0,10"/>
-                <TextBox TextWrapping="Wrap" Width="200" IsReadOnly="True" Margin="0,0,0,5"/>
-                <Button Content="Button" Width="200"/>
-            </StackPanel> 
+                <Label Content="Рассчитать количество отрицательных и положительных чисел:" Margin="0,0,0,10"/>
+                <Label Content="Отрицательные числа"/>
+                <TextBox x:Name="tbMinus" TextWrapping="Wrap" Width="200" IsReadOnly="True" Margin="0,0,0,5"/>
+                <Label Content="Положительные числа"/>
+                <TextBox x:Name="tbPlus" TextWrapping="Wrap" Width="200"/>
+                <Button x:Name="btnCalc" Content="Рассчитать" Width="200" Click="btnCalc_Click"/>
+            </StackPanel>
         </GroupBox>
+        <ListBox x:Name="lbList" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="2" Margin="10,10,10,10"/>
 
     </Grid>
 </Window>
